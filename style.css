@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Lemonada|Open+Sans&display=swap');
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    background-image: url("https://wallpaperaccess.com/full/754629.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#quote-box {
+    opacity: 0;
+    position: absolute;
+    padding: 2em 5em;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: "Open Sans", sans-serif;
+    max-width: 50em;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 40px rgba(255, 0, 255, 0.6);
+    border-radius: 20px;
+
+    transition: opacity 1s;
+}
+#quote-box.show {
+    opacity: 1;
+}
+#quote-text {
+    font-size: 3.5em;
+    text-align: center;
+}
+#quote-source {
+    font-size: 2em;
+    font-style: italic;
+    color: grey;
+}
+
+#inspire-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0.8em 2.5em;
+    transform: translate(-50%, -50%);
+
+    font: 5em "Open Sans", sans-serif;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: -40px 40px 0 deepskyblue, -60px 20px 0 indianred;
+
+    animation: inspire-button-shadow-1 0.5s ease-in-out infinite alternate,
+        inspire-button-shadow-2 0.5s ease-in-out infinite alternate,
+        inspire-button-shadow-3 0.5s ease-in-out infinite alternate;
+    
+    transition: background-color 0.5s, transform 1s, top 1s;
+}
+#inspire-button.bottom {
+    transform: translate(-50%, -50%) scale(0.5);
+    top: 85%;
+}
+
+#inspire-button:focus {
+    outline: none;
+}
+
+#inspire-button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+@keyframes inspire-button-shadow-1 {
+    from { box-shadow: -40px 40px 0 deepskyblue, -60px 20px 0 indianred, 40px -20px sandybrown; }
+    to { box-shadow: 40px -40px 0 springgreen, 20px 40px 0 slateblue, -40px -10px yellow; }
+}
+@keyframes inspire-button-shadow-2 {
+    from { box-shadow: -40px 40px 0 deepskyblue, -60px 20px 0 indianred, 40px -20px sandybrown; }
+    to { box-shadow: 40px -40px 0 springgreen, 20px 40px 0 slateblue, -40px -10px yellow; }
+}
+@keyframes inspire-button-shadow-3 {
+    from { box-shadow: -40px 40px 0 deepskyblue, -60px 20px 0 indianred, 40px -20px sandybrown; }
+    to { box-shadow: 40px -40px 0 springgreen, 20px 40px 0 slateblue, -40px -10px yellow; }
+}
