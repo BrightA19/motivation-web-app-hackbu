@@ -16,7 +16,8 @@ const QUOTES = [
     { text: "You matter.",                                  source: ""},
 ]
 
-let inspireButtonElement = document.getElementById("inspire-button"),
+let inspireBoxElement = document.getElementById("inspire-box"),
+    inspireButtonElement = document.getElementById("inspire-button"),
     quoteBoxElement = document.getElementById("quote-box"),
     quoteTextElement = document.getElementById("quote-text"),
     quoteSourceElement = document.getElementById("quote-source");
@@ -33,8 +34,8 @@ inspireButtonElement.onclick = function () {
     quoteTextElement.textContent = quote.text;
     quoteSourceElement.textContent = quote.source;
 
-    if (!inspireButtonElement.classList.contains("bottom"))
-        inspireButtonElement.classList.add("bottom");
+    if (!inspireBoxElement.classList.contains("bottom"))
+        inspireBoxElement.classList.add("bottom");
     if (!quoteBoxElement.classList.contains("show"))
         quoteBoxElement.classList.add("show");
 }

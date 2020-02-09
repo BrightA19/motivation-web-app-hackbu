@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lemonada|Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 html, body {
     height: 100%;
@@ -7,9 +7,16 @@ html, body {
 
 body {
     margin: 0;
-    background-image: url("https://wallpaperaccess.com/full/754629.jpg");
+    font-family: "Open Sans", sans-serif;
+    background-image: url("background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.title {
+    color: white;
+    text-shadow: 0 0 5px black;
+    margin: 1em;
 }
 
 #quote-box {
@@ -20,8 +27,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    font-family: "Open Sans", sans-serif;
-    max-width: 50em;
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 0 40px rgba(255, 0, 255, 0.6);
     border-radius: 20px;
@@ -41,28 +46,28 @@ body {
     color: grey;
 }
 
-#inspire-button {
+#inspire-box {
     position: absolute;
     top: 50%;
     left: 50%;
-    padding: 0.8em 2.5em;
     transform: translate(-50%, -50%);
+    transition: transform 1s, top 1s;
+}
+#inspire-box.bottom {
+    transform: translate(-50%, -50%) scale(0.5);
+    top: 85%;
+}
 
-    font: 5em "Open Sans", sans-serif;
+#inspire-button {
+    width: 800px;
+    height: 200px;
+    padding: 0.8em 2.5em;
+
+    font-size: 4.5em;
     background-color: white;
     border: none;
     border-radius: 20px;
-    box-shadow: -40px 40px 0 deepskyblue, -60px 20px 0 indianred;
-
-    animation: inspire-button-shadow-1 0.5s ease-in-out infinite alternate,
-        inspire-button-shadow-2 0.5s ease-in-out infinite alternate,
-        inspire-button-shadow-3 0.5s ease-in-out infinite alternate;
-    
-    transition: background-color 0.5s, transform 1s, top 1s;
-}
-#inspire-button.bottom {
-    transform: translate(-50%, -50%) scale(0.5);
-    top: 85%;
+    transition: background-color 0.5s;
 }
 
 #inspire-button:focus {
@@ -71,19 +76,44 @@ body {
 
 #inspire-button:hover {
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
+.inspire-anim {
+    position: absolute;
+    width: 800px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 20px;
+}
+.inspire-anim-div1 { 
+    left: -40px;
+    top: 40px;
+    background-color: deepskyblue;
+    animation: inspire-box-anim-1 0.5s ease-in-out infinite alternate;
+}
+.inspire-anim-div2 { 
+    left: -60px;
+    top: 20px;
+    background-color: indianred;
+    animation: inspire-box-anim-2 0.5s 0.15s ease-in-out infinite alternate;
+}
+.inspire-anim-div3 { 
+    left: 40px;
+    top: -20px;
+    background-color: sandybrown;
+    animation: inspire-box-anim-3 0.5s 0.35s ease-in-out infinite alternate;
+}
 
-@keyframes inspire-button-shadow-1 {
-    from { box-shadow: -40px 40px 0 deepskyblue, -60px 20px 0 indianred, 40px -20px sandybrown; }
-    to { box-shadow: 40px -40px 0 springgreen, 20px 40px 0 slateblue, -40px -10px yellow; }
+@keyframes inspire-box-anim-1 {
+    from { left: -40px; top: 40px; background-color: deepskyblue; }
+    to { left: 40px; top: -40px; background-color: springgreen }
 }
-@keyframes inspire-button-shadow-2 {
-    from { box-shadow: -40px 40px 0 deepskyblue, -60px 20px 0 indianred, 40px -20px sandybrown; }
-    to { box-shadow: 40px -40px 0 springgreen, 20px 40px 0 slateblue, -40px -10px yellow; }
+@keyframes inspire-box-anim-2 {
+    from { left: -60px; top: 20px; background-color: indianred; }
+    to { left: 20px; top: 40px; background-color: slateblue }
 }
-@keyframes inspire-button-shadow-3 {
-    from { box-shadow: -40px 40px 0 deepskyblue, -60px 20px 0 indianred, 40px -20px sandybrown; }
-    to { box-shadow: 40px -40px 0 springgreen, 20px 40px 0 slateblue, -40px -10px yellow; }
+@keyframes inspire-box-anim-3 {
+    from { left: -40px; top: -20px; background-color: sandybrown; }
+    to { left: 40px; top: -10px; background-color: yellow }
 }
