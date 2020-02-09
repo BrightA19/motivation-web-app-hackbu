@@ -1,0 +1,19 @@
+{
+  "name": "delectare",
+  "version": "1.0.0",
+  "description": "A motivational web app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BrightA19/delectare.git"
+  },
+  "author": "Bright A. <bamoate1@binghamton.edu> & Kyle J. <kjannie1@binghamton.edu?",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
