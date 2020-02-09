@@ -74,9 +74,12 @@ body {
     outline: none;
 }
 
-#inspire-button:hover {
+#inspire-button:hover, #inspire-button:focus {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.7);
+}
+#inspire-button:hover ~ .inspire-anim, #inspire-button:focus ~ .inspire-anim {
+    animation-duration: 0.2s;
 }
 
 .inspire-anim {
